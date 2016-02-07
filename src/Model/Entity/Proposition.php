@@ -9,23 +9,23 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $proposition
  * @property int $question_id
- * @property \App\Model\Entity\Question $question
  * @property string $etat_objet
  * @property int $compteur
  */
 class Proposition extends Entity
 {
-		private $proposition;
-		private $compteur;
-	
-	
-		public function getProposition()
-		{
-			return $this->proposition;
-		}
-	
-		public function setProposition($nouvelleProposition)
-		{
-			$this->proposition = $nouvelleProposition;
-		}
+
+    /**
+     * Fields that can be mass assigned using newEntity() or patchEntity().
+     *
+     * Note that when '*' is set to true, this allows all unspecified fields to
+     * be mass assigned. For security purposes, it is advised to set '*' to false
+     * (or remove it), and explicitly make individual fields accessible as needed.
+     *
+     * @var array
+     */
+    protected $_accessible = [
+        '*' => true,
+        'id' => false,
+    ];
 }
