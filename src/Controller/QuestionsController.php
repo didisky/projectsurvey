@@ -39,8 +39,9 @@ class QuestionsController extends AppController
 
         $this->set('question', $question);
         $this->set('_serialize', ['question']);
+        echo("TOTO");
     }
-
+    
     /**
      * Add method
      *
