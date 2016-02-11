@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Propositions Controller
@@ -124,10 +125,20 @@ class PropositionsController extends AppController {
 	}
 	/**
 	 * Vote method
-	 * méthode qui va permettre d'incrémenter le compteur de vote.
+	 * permet d'incrémenter le compteur de vote.
 	 */
-	public function vote() {
-		debug ( "TOTO" );
-		echo ("TOTO");
+	public function vote($id = null) {
+		$propositionsTable = TableRegistry::get ( 'propositions' );
+		$proposition = $propositionsTable->get ( $this->request->data ( 'propid' ) );
+		$cptr = $proposition->get ( 'compteur' );
+		$cptr = $cptr + 1;
+		$proposition->compteur = $cptr;
+		$propositionsTable->save ( $proposition );
+		$this->Flash->success ( __ ( 'Merci pour le vote !' ) );
+		return $this->redirect ( [ 
+				'action' => 'view',
+				'controller' => 'Questions',
+				$proposition->get ( 'question_id' )
+		] );
 	}
 }

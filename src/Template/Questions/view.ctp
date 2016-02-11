@@ -10,29 +10,6 @@
 	</ul>
 </nav>
 <div class="questions view large-9 medium-8 columns content">
-	<h3><?= h($question->id) ?></h3>
-	<table class="vertical-table">
-		<tr>
-			<th><?= __('Question') ?></th>
-			<td><?= h($question->question) ?></td>
-		</tr>
-		<tr>
-			<th><?= __('Id') ?></th>
-			<td><?= $this->Number->format($question->id) ?></td>
-		</tr>
-		<tr>
-			<th><?= __('Theme Id') ?></th>
-			<td><?= $this->Number->format($question->theme_id) ?></td>
-		</tr>
-		<tr>
-			<th><?= __('Date') ?></th>
-			<td><?= h($question->date) ?></td>
-		</tr>
-	</table>
-	<div class="row">
-		<h4><?= __('Etat Objet') ?></h4>
-        <?= $this->Text->autoParagraph(h($question->etat_objet)); ?>
-    </div>
 	<div class="related">
 		<h4><?= __('Related Propositions') ?></h4>
         <?php if (!empty($question->propositions)): ?>
@@ -40,14 +17,17 @@
 			<tr>
 				<th><?= __('Proposition') ?></th>
 				<th><?= __('Compteur') ?></th>
-				<th <?=__('Vote') ?></th>
+				<th><?= __('Vote') ?></th>
 			</tr>
             <?php foreach ($question->propositions as $propositions): ?>
             <tr>
 				<td><?= h($propositions->proposition) ?></td>
 				<td><?= h($propositions->compteur) ?></td>
 				<td>
-				<?= $this->Html->link(__('Vote'), ['controller' => 'Propositions','action' => 'vote', $question->id]) ?>
+				<?= $this->Form->create('Vote', array('url' => array ('controller' => 'Propositions', 'action' => 'vote',  $question->id), 'method' => 'vote')); ?>
+				<?=$this->Form->input('propid', array('value'=>$propositions->id, 'type' => 'hidden')); ?>
+				<?= $this->Form->button('Vote'); ?>
+				<?= $this->Form->end(); ?>
 				</td>
 			</tr>
             <?php endforeach; ?>
