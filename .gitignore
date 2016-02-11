@@ -1,0 +1,14 @@
+/vendor/*
+/config/app.php
+/tmp/*
+/logs/*
+
+bin/*
+plugins/*
+config/*
+test/*
+phpunit.xml.dist
+.*
+README.md
+composer.json
+composer.lock
