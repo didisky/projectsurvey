@@ -34,15 +34,17 @@ class QuestionsController extends AppController {
 	 * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
 	 */
 	public function view($id = null) {
-		// $idProposition = $this->Questions->get($id, [
-		// 'contain' => ['Propositions']
-		// ]);
+		$nbrVote =0;
 		$question = $this->Questions->get ( $id, [ 
 				'contain' => [ 
 						'Propositions' 
 				] 
 		] );
-		
+		  foreach ($question->propositions as $propositions){
+		  	$propositions->get ( 'compteur' );
+		  	$nbrVote = $nbrVote + $propositions->get ( 'compteur' );
+		  }
+		  	$question->nbrVote = $nbrVote;
 		$this->set ( 'question', $question );
 		$this->set ( '_serialize', [ 
 				'question' 

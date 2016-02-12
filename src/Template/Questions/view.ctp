@@ -10,25 +10,38 @@
 	</ul>
 </nav>
 <div class="questions view large-9 medium-8 columns content">
+	<div>
+		<h3><?= __('Question') ?></h3>
+		<strong><?=$question->question?></strong>
+		<mark><mark>
+	</div>
+
 	<div class="related">
 		<h4><?= __('Related Propositions') ?></h4>
         <?php if (!empty($question->propositions)): ?>
         <table cellpadding="0" cellspacing="0">
 			<tr>
 				<th><?= __('Proposition') ?></th>
-				<th><?= __('Compteur') ?></th>
 				<th><?= __('Vote') ?></th>
+				<th>
+				<?= __('Resultat') ?>
+				<?=__('('), $question->nbrVote,__(')')?>
+				</th>
 			</tr>
             <?php foreach ($question->propositions as $propositions): ?>
             <tr>
 				<td><?= h($propositions->proposition) ?></td>
-				<td><?= h($propositions->compteur) ?></td>
 				<td>
 				<?= $this->Form->create('Vote', array('url' => array ('controller' => 'Propositions', 'action' => 'vote',  $question->id), 'method' => 'vote')); ?>
 				<?=$this->Form->input('propid', array('value'=>$propositions->id, 'type' => 'hidden')); ?>
 				<?= $this->Form->button('Vote'); ?>
 				<?= $this->Form->end(); ?>
 				</td>
+				<td>
+				<progress value=<?=$propositions->compteur*100/$question->nbrVote;?> max="100"></progress>
+				<?= $this->Text->truncate(h($propositions->compteur*100/$question->nbrVote),4, array('ellipsis' =>'','exact' => false)),__('%'); ?>
+				</td>
+		
 			</tr>
             <?php endforeach; ?>
         </table>

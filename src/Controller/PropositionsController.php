@@ -129,16 +129,16 @@ class PropositionsController extends AppController {
 	 */
 	public function vote($id = null) {
 		$propositionsTable = TableRegistry::get ( 'propositions' );
-		$proposition = $propositionsTable->get ( $this->request->data ( 'propid' ) );
-		$cptr = $proposition->get ( 'compteur' );
+		$propositionSelection = $propositionsTable->get ( $this->request->data ( 'propid' ) );
+		$cptr = $propositionSelection->get ( 'compteur' );
 		$cptr = $cptr + 1;
-		$proposition->compteur = $cptr;
-		$propositionsTable->save ( $proposition );
+		$propositionSelection->compteur = $cptr;
+		$propositionsTable->save ( $propositionSelection );
 		$this->Flash->success ( __ ( 'Merci pour le vote !' ) );
 		return $this->redirect ( [ 
 				'action' => 'view',
 				'controller' => 'Questions',
-				$proposition->get ( 'question_id' )
+				$propositionSelection->get ( 'question_id' )
 		] );
 	}
 }

@@ -15,7 +15,7 @@ use Cake\ORM\Entity;
  */
 class Question extends Entity
 {
-
+	var $nbrVote;
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
