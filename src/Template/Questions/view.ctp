@@ -39,7 +39,7 @@
 				</td>
 				<td>
 				<progress value=<?=$propositions->compteur*100/$question->nbrVote;?> max="100"></progress>
-				<?= $this->Text->truncate(h($propositions->compteur*100/$question->nbrVote),4, array('ellipsis' =>'','exact' => false)),__('%'); ?>
+				<?=$this->Number->toPercentage($propositions->compteur*100/$question->nbrVote); ?>
 				</td>
 		
 			</tr>
