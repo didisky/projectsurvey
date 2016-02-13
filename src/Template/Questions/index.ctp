@@ -5,7 +5,7 @@
   <?php $this->end(); ?>
    
   <?php $this->start('Teaser2');?>
-    	<h2> Qui va gagner la l1? </h2>
+    	<h2> Qui va 	 la l1? </h2>
  		<h3>JEROME</h3>
   <?php $this->end(); ?>
    

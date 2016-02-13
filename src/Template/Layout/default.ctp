@@ -19,11 +19,11 @@
 <!--     <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="/projectsurvey/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<!--     <link href="/projectsurvey/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="/projectsurvey/js/ie-emulation-modes-warning.js"></script>
+<!--     <script src="/projectsurvey/js/ie-emulation-modes-warning.js"></script> -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -32,7 +32,7 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+    	<?= $this->Html->css('carousel')?>
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -88,7 +88,7 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-        <img class="second-slide" src="/projectsurvey/img/carousel.gif" alt="Second slide" width="500" height="500">
+        <img class="second-slide" src="/projectsurvey/img/tourEiffel.png" alt="Second slide" width="100%" height="100">
 			<div class="container">
 			 	<div class="carousel-caption">
 				<h1>test</h1>
@@ -98,7 +98,7 @@
          
         </div>
         <div class="item">
-          <img class="second-slide" src="/projectsurvey/img/carousel.gif" alt="Second slide" width="500" height="500">
+          <img class="second-slide" src="/projectsurvey/img/tourEiffel.png" alt="Second slide" width="100%" height="100">
           <div class="container">
             <div class="carousel-caption">
               <h1>Politique</h1>
@@ -108,7 +108,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="third-slide" src="/projectsurvey/img/carousel.gif" alt="Third slide" width="500" height="500">
+          <img class="third-slide" src="/projectsurvey/img/tourEiffel.png" alt="Third slide" width="100%" height="100">
           <div class="container">
             <div class="carousel-caption">
               <h1>Sport</h1>
@@ -161,11 +161,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="/projectsurvey/js/bootstrap.min.js"></script>
+<!--     <script src="/projectsurvey/js/bootstrap.min.js"></script> -->
+    <?= $this->Html->script('bootstrap.min.js')?>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="vendor/twbs/bootstrap/docs/assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<!--     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
     <?= $this->fetch('script')?>
   </body>
 </html>
