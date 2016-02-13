@@ -15,6 +15,8 @@
     <!-- Bootstrap core CSS -->
     <?= $this->Html->css('bootstrap')?>
     <?= $this->Html->css('base')?>
+    <!-- Custom styles for this template -->
+   	<?= $this->Html->css('carousel')?>
     <?= $this->fetch('css')?>
 <!--     <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
@@ -31,8 +33,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Custom styles for this template -->
-    	<?= $this->Html->css('carousel')?>
+
   </head>
 <!-- NAVBAR
 ================================================== -->
