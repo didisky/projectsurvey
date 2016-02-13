@@ -13,8 +13,8 @@
     <title>Carousel Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <?= $this->Html->css('base')?>
     <?= $this->Html->css('bootstrap')?>
+    <?= $this->Html->css('base')?>
     <?= $this->fetch('css')?>
 <!--     <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
@@ -88,31 +88,31 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide" width="140" height="140">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-            </div>
-          </div>
+        <img class="second-slide" src="/projectsurvey/img/carousel.gif" alt="Second slide" width="500" height="500">
+			<div class="container">
+			 	<div class="carousel-caption">
+				<h1>test</h1>
+				<?= $this->fetch('Teaser1')?>
+				</div>
+			</div>
+         
         </div>
         <div class="item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide" width="140" height="140">
+          <img class="second-slide" src="/projectsurvey/img/carousel.gif" alt="Second slide" width="500" height="500">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <h1>Politique</h1>
+              <?= $this->fetch('Teaser2')?>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide" width="140" height="140">
+          <img class="third-slide" src="/projectsurvey/img/carousel.gif" alt="Third slide" width="500" height="500">
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <h1>Sport</h1>
+              <?= $this->fetch('Teaser3')?>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
             </div>
           </div>
@@ -135,8 +135,14 @@
 
     <div class="container">
 
-	<?= $this->fetch('content') ?>
+ <?= $this->fetch('content')?>
 
+ </div>
+      <!-- /END THE FEATURETTES -->
+
+ <div>
+  <?= $this->fetch('toto')?>
+ </div>
 
       <!-- /END THE FEATURETTES -->
 

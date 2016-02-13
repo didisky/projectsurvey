@@ -1,3 +1,19 @@
+
+  <?php $this->start('Teaser1');?>
+    	<h2> Qui est le meilleur codeur? </h2>
+ 		<h3>JEROME</h3>
+  <?php $this->end(); ?>
+   
+  <?php $this->start('Teaser2');?>
+    	<h2> Qui va gagner la l1? </h2>
+ 		<h3>JEROME</h3>
+  <?php $this->end(); ?>
+   
+  <?php $this->start('Teaser3');?>
+    	<h2> Qui va gagner la c1? </h2>
+ 		<h3>JEROME</h3>
+  <?php $this->end(); ?>
+   
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -28,7 +44,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $question->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $question->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $question->id], ['confirm' => __('Are you sure you want to delete # {0}?', $question->id)]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $question->id], ['confirm' => __('Are you sure you want to delete # {0}?', $question->id)]) ?>	
                 </td>
             </tr>
             <?php endforeach; ?>
