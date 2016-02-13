@@ -6,7 +6,7 @@
         <li><?= $this->Html->link(__('New Proposition'), ['controller' => 'Propositions', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="questions index large-9 medium-8 columns content">
+<div class="questions index large-12 medium-10 columns content">
     <h3><?= __('Questions') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
